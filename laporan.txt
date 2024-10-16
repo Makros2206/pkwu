@@ -1,0 +1,34 @@
+Laporan dari web yang telah Anda buat mencakup beberapa poin berikut:
+
+1. Deskripsi Umum
+    Website ini merupakan sebuah proyek untuk menampilkan jam digital menggunakan HTML, CSS, dan JavaScript. Web tersebut memiliki fitur untuk memilih tema visual yang dapat diubah oleh pengguna sesuai keinginan.
+
+2. Fitur Utama
+    Jam Digital: Menampilkan jam real-time dengan tampilan waktu yang diperbarui setiap detik.
+    Tanggal: Selain jam, website juga menampilkan tanggal lengkap dalam format bahasa Indonesia (hari, tanggal, bulan, dan tahun).
+    Pemilihan Tema: Pengguna dapat memilih dari berbagai tema yang disediakan, seperti tema terang, gelap, grunge, musim gugur, musim panas, minimalist, neon, retro, pastel, alam, laut, klasik, dan tema berganti otomatis.
+    Tema Berganti Otomatis: Terdapat opsi khusus yang memungkinkan website secara otomatis berganti tema setiap 2,5 detik.
+    Unduh Laporan dan Script: Website juga menyediakan tombol untuk mengunduh laporan dalam format PDF dan script HTML dari web tersebut.
+
+3. Teknologi yang Digunakan
+    HTML5: Struktur dasar halaman web.
+    CSS3: Styling web dengan menggunakan variabel untuk warna tema, bayangan teks, dan elemen desain lainnya.
+    JavaScript: Digunakan untuk mengubah tema, memperbarui jam dan tanggal secara real-time, serta fitur untuk penggantian tema otomatis.
+
+4. Pengaturan Tema
+    Terdapat 13 pilihan tema yang dapat dipilih, di antaranya:
+    Tema Grunge, Musim Gugur, Musim Panas, Minimalis, Neon, Retro, Gelap, Terang, Lembut, Alam, Laut, Klasik, serta opsi "Auto Change Theme" untuk pergantian tema otomatis setiap 2,5 detik.
+    Pengguna bisa memilih tema dari dropdown menu, dan halaman akan berubah warna sesuai dengan tema yang dipilih.
+
+5. Pengguna
+    Website ini dibuat oleh sebuah kelompok proyek PKWU yang beranggotakan empat orang:
+     1. Machrus
+     2. Muhammad Ferdiansya
+     3. Moh Agos Aji Prasetyo
+     4. Alfian Kartiko Putro
+
+6. Tampilan dan Navigasi
+    Web ini dirancang dengan desain responsif, sehingga tampilannya menyesuaikan dengan ukuran layar perangkat pengguna.
+    Elemen jam dan tanggal diletakkan di tengah halaman dengan batas-batas yang dihiasi border berwarna sesuai dengan tema yang dipilih.
+
+Website ini cocok digunakan untuk proyek pembelajaran atau personal project dalam memahami penggunaan CSS, HTML, dan JavaScript dalam mengatur elemen dinamis dan tema.
