@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Digital</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .clock-container {
+            text-align: center;
+        }
+
+        #divider {
+            width: 100%; /* Menentukan lebar garis */
+            border: 3px solid var(--primary-color); /* Warna dan ukuran garis */
+            margin: 15px 0; /* Jarak atas dan bawah */
+        }
+
+        #clock {
+            font-size: 72px; /* Ukuran font lebih besar */
+            margin: 20px 0;
+            text-shadow: 5px 6.5px 10px rgba(0, 0, 0, 0.5); /* Bayangan pada teks */
+        }
+
+        #date {
+            font-size: 28px; /* Ukuran font untuk tanggal */
+            margin-top: 10px; /* Jarak atas untuk tanggal */
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Bayangan pada teks tanggal */
+        }
+
+        .time-container {
+            border: 9px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 30px;
+            margin: 20px 0;
+            background-color: var(--secondary-bg-color);
+        }
+
+        .title {
+            font-size: 45px; /* Ukuran font lebih besar */
+            font-weight: bold;
+            padding: 20px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Bayangan pada teks */
+            background-color: var(--secondary-bg-color); /* Latar belakang bingkai */
+            display: inline-block; /* Agar bingkai mengikuti ukuran teks */
+        }
+
+       .group-name1 {
+            font-size: 30px; 
+            border: 7px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            
+        }
+
+
+        .group-name {
+            border: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        select {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        select:hover {
+            background-color: darkorange;
+        }
+
+        .download-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: darkorange;
+        }
+
+        /* Definisikan tema-tema di sini */
+        /* Tema Grunge */
+        .grunge-theme {
+            --bg-color: #2c2c2c;
+            --text-color: #f2f2f2;
+            --primary-color: #ff5f5f;
+            --secondary-bg-color: #3e3e3e;
+        }
+
+        /* Tema Musim Gugur */
+        .autumn-theme {
+            --bg-color: #d35400;
+            --text-color: #ffffff;
+            --primary-color: #c0392b;
+            --secondary-bg-color: #e74c3c;
+        }
+
+        /* Tema Musim Panas */
+        .summer-theme {
+            --bg-color: #ffd700;
+            --text-color: #004e64;
+            --primary-color: #00b4d8;
+            --secondary-bg-color: #caf0f8;
+        }
+
+        /* Tema Minimalis */
+        .minimalist-theme {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --primary-color: #6c757d;
+            --secondary-bg-color: #e9ecef;
+        }
+
+        /* Tema Neon */
+        .neon-theme {
+            --bg-color: #0e0b16;
+            --text-color: #fff;
+            --primary-color: #f72585;
+            --secondary-bg-color: #1a1a2e;
+        }
+
+        /* Tema Retro */
+        .retro-theme {
+            --bg-color: #fdf3e7;
+            --text-color: #2b2b2b;
+            --primary-color: #f28d35;
+            --secondary-bg-color: #ffe5b9;
+        }
+
+        /* Tema Gelap */
+        .dark-theme {
+            --bg-color: #1e1e1e;
+            --text-color: #f0f0f0;
+            --primary-color: #ffcc00;
+            --secondary-bg-color: #333333;
+        }
+
+        /* Tema Terang */
+        .light-theme {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --primary-color: #007bff;
+            --secondary-bg-color: #e9ecef;
+        }
+
+        /* Tema Lembut */
+        .pastel-theme {
+            --bg-color: #f8f9fa;
+            --text-color: #495057;
+            --primary-color: #ff6f61;
+            --secondary-bg-color: #e2e6ea;
+        }
+
+        /* Tema Alam */
+        .nature-theme {
+            --bg-color: #a8e6cf;
+            --text-color: #004d40;
+            --primary-color: #ffab40;
+            --secondary-bg-color: #ff6f61;
+        }
+
+        /* Tema Laut */
+        .ocean-theme {
+            --bg-color: #1e3c72;
+            --text-color: #ffffff;
+            --primary-color: #f6d365;
+            --secondary-bg-color: #ffaf7b;
+        }
+
+        /* Tema Klasik */
+        .classic-theme {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #6f42c1;
+            --secondary-bg-color: #e9ecef;
+        }
+    </style>
+</head>
+<body class="neon-theme"> <!-- Ganti kelas tema default di sini -->
+    <div class="clock-container">
+        <div class="group-name1">
+            Proyek Pkwu<br>
+            Menbuat Web
+            Jam Digital
+        </div>
+        <div class="time-container">
+            <div id="clock">00:00:00</div>
+            <hr id="divider">
+            <div id="date"></div>
+        </div>
+        
+        <div class="group-name">
+            <strong>                            Nama Kelompok:</strong><br>
+            <br>
+            1. Machrus                             <br>
+            2. Muhammad Ferdiansya<br>
+            3. Moh Agos Aji Prasetyo   <br>
+            4. Alfian Kartiko Putro       <br>
+        </div>
+<br>
+        <select id="theme-selector" onchange="selectTheme()">
+            <option value="light-theme">Tema Terang</option>
+            <option value="dark-theme">Tema Gelap</option>
+            <option value="grunge-theme">Tema Grunge</option>
+            <option value="autumn-theme">Tema Musim Gugur</option>
+            <option value="summer-theme">Tema Musim Panas</option>
+            <option value="minimalist-theme">Tema Minimalis</option>
+            <option value="neon-theme">Tema Neon</option>
+            <option value="retro-theme">Tema Retro</option>
+            <option value="pastel-theme">Tema Lembut</option>
+            <option value="nature-theme">Tema Alam</option>
+            <option value="ocean-theme">Tema Laut</option>
+            <option value="classic-theme">Tema Klasik</option>
+            <option value="auto-change-theme">Tema Berganti Otomatis</option> <!-- Opsi baru -->
+        </select>
+<br>
+<br>
+       <a href="laporan.txt" download="Laporan.pdf">
+    <button class="download-btn">Unduh Laporan</button>
+</a>
+
+<a href="index.html" download="Scrip Web Jam Digital.html">
+    <button class="download-btn">Unduh Script HTML</button>
+</a>
+    </div>
+
+    <script>
+        // Array tema
+        const themes = [
+            'light-theme', 
+            'dark-theme', 
+            'grunge-theme', 
+            'autumn-theme', 
+            'summer-theme', 
+            'minimalist-theme', 
+            'neon-theme', 
+            'retro-theme',
+            'pastel-theme', 
+            'nature-theme', 
+            'ocean-theme', 
+            'classic-theme'
+        ];
+
+        let currentThemeIndex = 0;
+        let autoChangeInterval; // Variabel untuk menyimpan interval
+
+        function selectTheme() {
+            const themeSelector = document.getElementById('theme-selector');
+            const selectedTheme = themeSelector.value;
+
+            // Hapus semua tema
+            themes.forEach(theme => document.body.classList.remove(theme));
+
+            if (selectedTheme === 'auto-change-theme') {
+                // Mulai mengganti tema otomatis
+                autoChangeTheme();
+            } else {
+                // Hentikan tema otomatis jika sedang berjalan
+                clearInterval(autoChangeInterval);
+                document.body.classList.add(selectedTheme);
+            }
+        }
+
+        // Fungsi untuk mengganti tema otomatis
+        function autoChangeTheme() {
+            // Hapus tema saat ini
+            themes.forEach(theme => document.body.classList.remove(theme));
+
+            // Tambah tema baru
+            document.body.classList.add(themes[currentThemeIndex]);
+
+            // Update index tema
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+
+            // Set interval untuk mengganti tema setiap 5 detik
+            autoChangeInterval = setInterval(() => {
+                themes.forEach(theme => document.body.classList.remove(theme));
+                document.body.classList.add(themes[currentThemeIndex]);
+                currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            }, 2500);
+        }
+
+        // Update jam
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('date').textContent = now.toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+
+        // Menjalankan fungsi updateClock setiap detik
+        setInterval(updateClock, 1000);
+
+        updateClock(); // Menjalankan fungsi saat halaman dimuat
+    </script>
+</body>
+</html>
